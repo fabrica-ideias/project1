@@ -13,10 +13,13 @@ body{
 .progress{
 	display: none;
 }
-#formLogin{
-	margin-top: 15% ;
+#form{
+	margin-top: 2%;
 	background-color: #fff;
 	padding: 2%;
+}
+#fCadastro{
+	display: none;
 }
 #fieldPassword{
 	border-top: 1px solid #ccc;
@@ -71,14 +74,38 @@ body{
 .tabs .tab a:hover, .tabs .tab a.active{
 	color: #fff;
 }
+#imgUser{
+	background-color: #ddd;
+	max-width: 200px;
+	height: 130px;
+	border-radius: 100%;	
+	background-image: url("../icon/default.png");
+	background-size: 100% 100%;
+}
+#imgNewUser{
+	background-color: #ddd;
+	max-width: 200px;
+	height: 130px;
+	border-radius: 100%;	
+	background-image: url("../icon/default.png");
+	background-size: 100% 100%;
+	cursor: pointer;
+}
+.fileImg{
+	width: 100%;
+    background-color: #000;
+    height: 100%;
+    position: relative;
+    bottom: 0px;
+    opacity: 0;
+	overflow: hidden;
+}
 @media only screen and (max-width: 800px) {
 	#containerLogin{
-		margin-top: 25% !important;
 	}
 }
 
 @media only screen and (max-height:  500px) {
 	#containerLogin{
-		margin-top: 25% !important;
 	}	
 }

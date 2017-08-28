@@ -24,5 +24,11 @@
 				echo "0";
 			}
 		}
+
+		function salvaUsuario($usuario){
+			include("conexao.php");
+			mysqli_query($con,"insert into usuario (nome,email,senha,perfil) values ('".$usuario->getNome()."','".$usuario->getEmail()."','".$usuario->getSenha()."','".$usuario->getPerfil()."')");
+			echo "0";
+		}
 	}
 ?>

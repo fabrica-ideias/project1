@@ -5,7 +5,7 @@
 		$fachada = new Fachada();
 		$usuario = $fachada->getUsuarioPorId($_SESSION['idusuario']);
 		$fp = fopen("../logs/".$idusuario."-".$usuario->getNome().".txt", "a"); 
-		$escreve = fwrite($fp, date("d/m/Y h:i")." ".$info."\n");
+		$escreve = fwrite($fp, date("d/m/Y H:i")." ".$info."\n");
 		fclose($fp);
 	};
 ?>

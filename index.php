@@ -16,35 +16,46 @@
 </head>
 <body onload="verificaLogin()">
 	<div class="row" id="containerLogin">
-	 <div class="col s12 m4 l3"></div>
-		<div class="col s12 m12 l6" id="formLogin">	
-		 	<div id="nameLogin"></div>
-		 	<div class="progress" id="progress">
-		    	<div class="indeterminate"></div>
-		  	</div>
-		    <form method="POST" class="col s12 m12 l12" >
+	 <div class="col s12 m4 l4"></div>
+		<div class="col s12 m12 l4" id="form">
+		    <form method="POST" class="col s12 m12 l12" id="fLogin">
+			    <div class="row">
+					<div class="col s4 m5 l4"></div>
+					<div class="col s4 m2 l4 z-depth-4" id="imgUser"></div>
+					<div class="col s4 m5 l4"></div>
+				</div>	
+			 	<div id="nameLogin"></div>
+			 	<div class="progress" id="progress">
+			    	<div class="indeterminate"></div>
+			  	</div>
 			    <div class="row" id="fieldEmail">
 			        <div class="input-field col s12">
-			          	<input id="email" type="email" onkeydown="javascript: if(event.keyCode == 13) login();"  class="validate" autofocus/>
+			          	<input id="email" type="email" onkeydown="javascript: if(event.keyCode == 13) login();"  class="validate" required="" />
 			          	<label for="email">E-mail</label>
 			        </div>
 			    </div>
 			    <div class="row" id="fieldPassword">
 			        <div class="input-field col s12">
 			       		<input id="password" onkeydown="javascript: if(event.keyCode == 13) login();" type="password" class="validate"/>
-			       	   	<label for="password">Password</label>
+			       	   	<label for="password">Senha</label>
 			        </div>
 			    </div>
 			    <div class="row">
-			    	<div class="col s6" id="checkConect">   
+				    <div class="col s5"><a onclick="cadastro()" href="#cadastro">Cadastre-se</a>   
 	      			</div>
-			        <div class="input-field col s4">
-			       		<a onclick="login()"class="btn">PRÓXIMO</a>
-			       	</div>
+			    	<div id="checkConect">   
+	      			</div>
+			        
 			    </div>
+			    <dir class="row">
+				    <div class="col s12">
+				       		<a onclick="login()" class="btn">PRÓXIMO</a>
+				    </div>
+			    </dir>
 		    </form>
+		    <?php require_once("cadastro.php");?>
 		</div>
-		<div class="col s12 m4 l3"></div>
+		<div class="col s12 m4 l4"></div>
 	</div>
 	<div class="container" id="container"></div>		
 	<div class="container" id="produtos"></div>

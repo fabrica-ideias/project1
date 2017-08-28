@@ -29,6 +29,7 @@ function verificaEmail(email){
 				document.getElementById("progress").style.display = "none";
 				document.getElementById("fieldEmail").style.display = "none";
 				document.getElementById("fieldPassword").style.display = "block";
+				document.getElementById("imgUser").style.backgroundImage = "url('uploads/"+data.perfil+"')";
 				document.getElementById("password").focus();
 			},2000);
 		    verificarEmail = true;
@@ -176,5 +177,49 @@ function incluirPainel(){
 		document.getElementById("produtos").innerHTML = produto;
 
 }
-function addProduto(){
+function cadastro(){
+	document.getElementById("nameLogin").innerHTML = "<h4>Cadastro</h4>";
+	document.getElementById("fLogin").style.display = "none";
+	document.getElementById("fCadastro").style.display = "block";
+	document.getElementById("nome").focus();
 }
+var img;
+function uploadFoto(input) {
+    if (input.files && input.files[0]) {
+      	var reader = new FileReader();
+      	reader.onload = function (e) {
+	        img = new FormData(input);
+	        document.getElementById("imgNewUser").style.backgroundImage = "url('"+e.target.result+"')";
+	        document.getElementById("nome").focus();
+    	}
+      	reader.readAsDataURL(input.files[0]);
+    } 
+};
+function EnterTab(InputId,Evento){
+	if(Evento.keyCode == 13){		
+		document.getElementById(InputId).focus();
+	}
+}
+
+$(document).ready(function(){
+    $("#salvaUsuario").click(function(){
+     var file_data = $('#file').prop('files')[0];
+	 var form_data = new FormData();
+     form_data.append('file', file_data);
+     form_data.append('nome',  $('#nome').val()+" "+$('#sobrenome').val());
+     form_data.append('email', $('#emailUser').val());
+     form_data.append('senha', $('#senhaUser').val());
+	    $.ajax({
+	        type:"POST",
+	        url:"php/salvaUsuario.php",
+			type: "POST",             // Type of request to be send, called as method
+			data: form_data, // Data sent to server, a set of key/value pairs (i.e. form fields and values)
+			contentType: false,       // The content type used when sending data to the server.
+			cache: false,             // To unable request pages to be cached
+			processData:false,        // To send DOMDocument or non processed data file it is set to false
+			success: function(data) {
+	        }
+
+	    });
+    }); 
+});
