@@ -30,18 +30,18 @@
 			  	</div>
 			    <div class="row" id="fieldEmail">
 			        <div class="input-field col s12">
-			          	<input id="email" type="email" onkeydown="javascript: if(event.keyCode == 13) login();"  class="validate" required="" />
-			          	<label for="email">E-mail</label>
+			          	<input id="email"  type="email" onkeydown="javascript: if(event.keyCode == 13) login();"  class="validate" required="true" />
+			          	<label for="email" data-error="Não foi possível encontrar sua conta" >E-mail</label>
 			        </div>
 			    </div>
 			    <div class="row" id="fieldPassword">
 			        <div class="input-field col s12">
 			       		<input id="password" onkeydown="javascript: if(event.keyCode == 13) login();" type="password" class="validate"/>
-			       	   	<label for="password">Senha</label>
+			       	   	<label for="password" data-error="Senha incorreta">Senha</label>
 			        </div>
 			    </div>
 			    <div class="row">
-				    <div class="col s5"><a onclick="cadastro()" href="#cadastro">Cadastre-se</a>   
+				    <div class="col s5"><a style="cursor: pointer;" onclick="cadastro()">Cadastre-se</a>   
 	      			</div>
 			    	<div id="checkConect">   
 	      			</div>

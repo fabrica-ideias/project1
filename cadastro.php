@@ -15,14 +15,14 @@
           <label for="last_name">Nome</label>
         </div>
         <div class="input-field col s6">
-          <input id="sobrenome" type="text" onkeydown="javascript:EnterTab('emailUser',event)" class="validate">
+          <input id="sobrenome" type="text"  onkeydown="javascript:EnterTab('emailUser',event)" class="validate">
           <label for="last_name">Sobrenome</label>
         </div>
       </div>
       <div class="row">
         <div class="input-field col s12">
-          <input id="emailUser" type="email" onkeydown="javascript:EnterTab('senhaUser',event)" class="validate">
-          <label for="emailUser">Email</label>
+          <input id="emailUser" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" type="email" onkeydown="javascript: if(event.keyCode == 13) verificaEmailCadastro();" onfocusout="verificaEmailCadastro()" class="validate">
+          <label for="emailUser" data-error="E-mail já possui cadastro">Email</label>
         </div>
       </div>
       <div class="row">
@@ -33,7 +33,7 @@
       </div>
       <dir class="row">
             <div class="col s12">
-                  <a class="btn" id="salvaUsuario">PRÓXIMO</a>
+                  <a class="btn" onclick="salvaUsuario()" id="salvaUsuario">PRÓXIMO</a>
             </div>
       </dir>
     </form>

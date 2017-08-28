@@ -28,7 +28,17 @@
 		function salvaUsuario($usuario){
 			include("conexao.php");
 			mysqli_query($con,"insert into usuario (nome,email,senha,perfil) values ('".$usuario->getNome()."','".$usuario->getEmail()."','".$usuario->getSenha()."','".$usuario->getPerfil()."')");
+			$fachada = new Fachada();
+			$fachada->startSession('false','idusuario',mysqli_insert_id($con));
 			echo "0";
+		}
+
+		function startSession($manterConectado,$session,$valor){	
+			session_start();
+			$_SESSION[$session] = $valor;
+			if($manterConectado == "true"){
+				setcookie($session, $_SESSION[$session], PHP_INT_MAX);
+			}
 		}
 	}
 ?>
